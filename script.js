@@ -2,10 +2,11 @@
 
 console.log("Hello from script.js rendering the custom chart");
 
+const dataURL =
+  "https://kristinbaumann.github.io/example-adding-interactivity-to-embedded-d3-chart-in-webflow/data/sfo-temperature-data.csv";
+
 // load data
-d3.csv(
-  "https://kristinbaumann.github.io/example-how-to-embed-custom-charts-in-webflow/sfo-temperature-data.csv"
-).then((data) => {
+d3.csv(dataURL).then((data) => {
   const groupedData = d3
     .groups(
       data,
