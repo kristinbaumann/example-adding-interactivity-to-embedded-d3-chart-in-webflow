@@ -2,6 +2,27 @@
 
 console.log("Hello from script.js rendering the custom chart");
 
+const locations = [
+  {
+    text: "San Francisco",
+    dataFile: "sfo-temperature-data.csv",
+  },
+  {
+    text: "Chicago",
+    dataFile: "ord-temperature-data.csv",
+  },
+];
+
+// populate the chart dropdown div
+const dropdownContainer = document.querySelector("#chart-dropdown");
+const dropdownElement = document.createElement("select");
+locations.forEach((location) => {
+  let option = document.createElement("option");
+  option.text = location.text;
+  dropdownElement.add(option);
+});
+if (dropdownContainer) dropdownContainer.appendChild(dropdownElement);
+
 const dataURL =
   "https://kristinbaumann.github.io/example-adding-interactivity-to-embedded-d3-chart-in-webflow/data/sfo-temperature-data.csv";
 
