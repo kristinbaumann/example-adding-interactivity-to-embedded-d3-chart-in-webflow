@@ -21,13 +21,14 @@ const dropdownElement = document.createElement("select");
 locations.forEach((location) => {
   let option = document.createElement("option");
   option.text = location.text;
+  option.value = location.id;
   dropdownElement.add(option);
 });
 if (dropdownContainer) dropdownContainer.appendChild(dropdownElement);
 
 // add event listener for dropdown
 dropdownContainer.addEventListener("change", (event) => {
-  console.log("Dropdown changed to", event.target);
+  console.log("Dropdown changed to", event.target.value);
 });
 
 const dataURL =
